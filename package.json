@@ -1,0 +1,14 @@
+{
+  "name": "grafana-k6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jerfeson Moreno",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "k6": "^0.0.0"
+  }
+}
