@@ -1,0 +1,21 @@
+grafana:
+  credentials:
+    keycloak_token_url: n
+    client_id: n
+    client_secret: n
+    api_url: https://quickpizza.grafana.com
+  scenario: rampingScenario
+  test: script
+  output-dashboard: web-dashboard=open=true&period=1s&port=8080&export=result/export.html&record=result/record.log
+  output-json: json=result/results.json
+
+grafana2:
+  credentials:
+    keycloak_token_url: n
+    client_id: n
+    client_secret: n
+    api_url: https://quickpizza.grafana.com
+  scenario: warmup
+  test: script
+  output-dashboard:
+  output-json: json=result/results.json
