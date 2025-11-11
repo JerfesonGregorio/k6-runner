@@ -4,7 +4,7 @@ from src.loader import load_k6_commands
 from src.executor import execute_command
 
 base_path = os.getcwd()
-file_path = os.path.join(base_path, 'k6', 'execution_plans', 'template.yaml')
+file_path = os.path.join(base_path, 'execution_plans', 'template.yaml')
 
 def main():
     logger.info('Iniciando geração de comandos K6...')
