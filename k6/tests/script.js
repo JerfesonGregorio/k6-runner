@@ -1,5 +1,8 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+import { getOptions } from '../scenarios/scenarios.js';
+
+export const options = getOptions(__ENV.SCENARIO);
 
 export default function script() {
     console.log("Executando o script importado!");
@@ -8,7 +11,7 @@ export default function script() {
 
     console.log("-------------->>>>" + url);
 
-    const res = http.get('https://quickpizza.grafana.com');
+    const res = http.get(url);
     check(res, { 'status foi 200': (r) => r.status == 200 });
 
     sleep(1);
