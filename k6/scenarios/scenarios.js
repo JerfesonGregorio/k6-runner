@@ -70,7 +70,7 @@ export let constantScenario = {
             executor: 'constant-arrival-rate',
             rate: 100,
             timeUnit: '1s',
-            duration: '1000s',
+            duration: '10s',
             preAllocatedVUs: 10, 
             maxVUs: 20,
         },
@@ -117,12 +117,12 @@ export let rampingScenarioSlow = {
                 { duration: '30s', target: 90 },
                 { duration: '30s', target: 100 },
                 { duration: '30s', target: 110 },
-{ duration: '30s', target: 120 },
-{ duration: '30s', target: 130 },
-{ duration: '30s', target: 140 },
-{ duration: '30s', target: 150 },
-{ duration: '30s', target: 160 },
-{ duration: '30s', target: 170 },
+                { duration: '30s', target: 120 },
+                { duration: '30s', target: 130 },
+                { duration: '30s', target: 140 },
+                { duration: '30s', target: 150 },
+                { duration: '30s', target: 160 },
+                { duration: '30s', target: 170 },
             ],
         },
     },
@@ -142,3 +142,24 @@ export function constantScenarioCustom(rate, timeUnitSeconds, durationSeconds, p
         }
     }
 };
+
+export function getOptions(scenarioName) {
+    
+    console.log(`Selected scenario: '${scenarioName}'`)
+
+    switch(scenarioName) {
+        case 'complete':
+            return completeScenario;
+        
+        case 'rampingFast':
+            return rampingScenario;
+        
+        case 'rampingSlow':
+            return rampingScenarioSlow;
+        
+        case 'constant':
+            return constantScenario;
+    }
+}
+
+console.log(getOptions('constant'));
