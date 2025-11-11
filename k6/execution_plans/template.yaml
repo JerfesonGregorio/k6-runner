@@ -1,0 +1,23 @@
+grafana:
+  credentials:
+    keycloak_token_url:
+    client_id:
+    client_secret:
+    api_url: https://quickpizza.grafana.com
+  scenario: constant
+  test: script
+  payload: payload
+  output-dashboard: web-dashboard=open=false&period=1s&port=8080&export=result/export.html&record=result/record.log # Melhoria: abstração de somente para path
+  output-json: json=result/results.json
+
+# grafana2:
+#   credentials:
+#     keycloak_token_url:
+#     client_id:
+#     client_secret:
+#     api_url: https://quickpizza.grafana.com
+#   scenario: warmup
+#   test: script
+#   payload:
+#   output-dashboard: web-dashboard=open=false&period=1s&port=8080&export=result/export2.html&record=result/record.log # Melhoria: abstração de somente para path
+#   output-json: json=result/results2.json
